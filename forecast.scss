@@ -1,0 +1,444 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* navbar style */
+.navbar {
+  width: 100%;
+  background: rgb(47, 150, 163);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  h2 {
+    color: whitesmoke;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .fas {
+    color: whitesmoke;
+    font-size: 30px;
+    margin: 5px;
+  }
+}
+
+/* whole page style */
+.weather-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  /* current temperatures and arrow for details forecast style */
+  .current-temperatures {
+    width: 30%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .currDate {
+      text-align: center;
+      color: red;
+    }
+    .curr-city {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 2px;
+      .city-name {
+        width: 45%;
+        margin-left: 10px;
+        margin-top: 2px;
+        font-weight: bolder;
+        .fa {
+          cursor: pointer;
+          padding-left: 10px;
+          &.fa:hover {
+            font-size: 120%;
+            font-weight: bolder;
+          }
+        }
+      }
+      #temp-icon {
+        margin: 2px;
+        height: 45px;
+        width: 45px;
+        margin-top: -8px;
+        background: grey;
+      }
+      .minTemp {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 10%;
+        #min {
+          color: green;
+          font-size: 20px;
+          padding-top: 1px;
+          padding-right: 10px;
+        }
+        #text {
+          font-size: 10px;
+          font-weight: bolder;
+          padding-top: 5px;
+          padding-right: 10px;
+        }
+      }
+      .maxTemp {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 15%;
+        #max {
+          color: red;
+          font-size: 25px;
+          padding-left: 5px;
+        }
+        #text {
+          font-size: 10px;
+          font-weight: bolder;
+          padding-left: 5px;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .maxTemp {
+          width: 20%;
+        }
+        .minTemp {
+          width: 15%;
+        }
+      }
+    }
+  }
+
+  /* map content with 9 cities position style */
+  .map-content {
+    display: block;
+    margin-top: 15px;
+    position: relative;
+    width: 40%;
+    li {
+      list-style-type: none;
+    }
+    .img-pos {
+      background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    #pirot {
+      bottom: 22%;
+      right: 10%;
+    }
+    #nis {
+      bottom: 27%;
+      right: 25%;
+    }
+    #kragujevac {
+      bottom: 40%;
+      right: 37%;
+    }
+    #uzice {
+      bottom: 38%;
+      left: 20%;
+    }
+    #zajecar {
+      bottom: 37%;
+      right: 20%;
+    }
+    #pozarevac {
+      top: 35%;
+      right: 35%;
+    }
+    #beograd {
+      top: 30%;
+      left: 29%;
+    }
+    #novi-sad {
+      top: 20%;
+      left: 25%;
+    }
+    #subotica {
+      top: 5%;
+      left: 20%;
+    }
+    .city-pos {
+      position: absolute;
+
+      cursor: pointer;
+      text-shadow: 2px 2px 4px whitesmoke;
+      font-weight: bolder;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .temperature-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        img {
+          margin: 2px;
+          padding: -5px;
+          height: 30px;
+          width: 30px;
+          background: grey;
+        }
+        h2,
+        span {
+          margin: 2px;
+        }
+      }
+      &:hover {
+        text-shadow: 2px 2px 4px;
+      }
+    }
+  }
+
+  /* forecast for 3 next days style */
+  .long-temperature {
+    display: block;
+    width: 30%;
+    margin-top: 10px;
+    .long-temp {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .dayFirst,
+      .daySecond,
+      .dayThird {
+        width: 30%;
+        text-align: center;
+        color: red;
+      }
+    }
+    .long-city {
+      .city-name {
+        width: 45%;
+        margin-left: 10px;
+        margin-top: 14px;
+        font-weight: bolder;
+      }
+      .longForecast {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .firstDay,
+        .secondDay,
+        .thirdDay {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 30%;
+          #temp-icon {
+            margin: 1px;
+            height: 35px;
+            width: 35px;
+            background: grey;
+          }
+          .forecastFirst,
+          .forecastSecond,
+          .forecastThird {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .maxTemp,
+            .minTemp {
+              display: flex;
+              flex-direction: column;
+              #max {
+                color: red;
+                font-size: 15px;
+              }
+              #min {
+                color: green;
+                font-size: 12px;
+                margin-top: 2px;
+                margin-left: 5px;
+              }
+              #minText {
+                margin-left: 4px;
+              }
+              #text {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    .current-temperatures {
+      width: 42%;
+      margin-right: 2%;
+    }
+
+    .map-content {
+      width: 52%;
+      margin-right: 2%;
+    }
+    .long-temperature {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .current-temperatures,
+    .map-content,
+    .long-temperature {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+
+  /* detail forecast style when we click on double arro or city on the map */
+  .detail-forecast {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 60px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 100%;
+    overflow: auto;
+    background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+    background: linear-gradient(
+      rgba(47, 150, 163, 0.4),
+      rgba(48, 62, 143, 0.6)
+    );
+    .date-currently {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .daily {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 50px;
+      .summ {
+        display: flex;
+        flex-direction: column;
+        #summ-text {
+          color: #333;
+          margin-top: -10px;
+          text-align: center;
+        }
+      }
+      #iconCurr {
+        margin: 2px;
+        height: 60px;
+        width: 60px;
+      }
+      .currentlyTemp {
+        font-size: 25px;
+        color: #333;
+        margin-left: -30px;
+        margin-top: 15px;
+      }
+      .maxTemp,
+      .minTemp {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        text-align: center;
+        width: 25%;
+        #max {
+          color: red;
+          font-size: 25px;
+        }
+        #min {
+          color: green;
+          font-size: 20px;
+          margin-top: 3px;
+        }
+      }
+      .maxTemp {
+        padding-left: 60px;
+      }
+      .minTemp {
+        padding-right: 60px;
+      }
+    }
+    .hourly-temp {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 30px;
+      text-align: center;
+      #hourly-icon {
+        margin: 2px;
+        height: 60px;
+        width: 60px;
+        background: lightgrey;
+      }
+    }
+    .detail-long-term {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 30px;
+      text-align: center;
+      .day-temp {
+        width: 20%;
+        h5 {
+          color: red;
+        }
+        .long-temp {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          #long-icon {
+            margin: 2px;
+            height: 50px;
+            width: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            background: lightgrey;
+          }
+        }
+      }
+    }
+    .btn-back {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      border-radius: 20px;
+      padding: 0.2rem 0.5rem;
+      cursor: pointer;
+      text-transform: capitalize;
+      font-weight: bolder;
+      &:hover {
+        border: 3px solid whitesmoke;
+        background-color: rgba(48, 62, 143, 0.8);
+        color: whitesmoke;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      width: 50%;
+      margin-left: 25%;
+      margin-right: 25%;
+      .maxTemp,
+      .minTemp {
+        width: 10%;
+      }
+    }
+    @media screen and (max-width: 992px) {
+      .maxTemp {
+        padding-left: 100px;
+      }
+      .minTemp {
+        padding-right: 100px;
+      }
+    }
+  }
+}
