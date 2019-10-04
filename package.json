@@ -4,12 +4,12 @@
   "description": "",
   "main": "dailyTemperature.js",
   "scripts": {
-    "deploy": "gh-pages -d weather-forecast"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bokijano.github.io/weathe-forecast",
+  "homepage": "https://bokijano.github.io/weather-forecast",
   "dependencies": {
     "gh-pages": "^2.1.1"
   }
