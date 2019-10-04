@@ -1,0 +1,16 @@
+{
+  "name": "weather-forecast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dailyTemperature.js",
+  "scripts": {
+    "deploy": "gh-pages -d weather-forecast"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bokijano.github.io/weathe-forecast",
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}

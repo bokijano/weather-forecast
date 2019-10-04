@@ -1,0 +1,732 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* navbar style */
+.navbar {
+  width: 100%;
+  background: #2f96a3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar h2 {
+  color: whitesmoke;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.navbar .fas {
+  color: whitesmoke;
+  font-size: 30px;
+  margin: 5px;
+}
+
+/* whole page style */
+.weather-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  /* current temperatures and arrow for details forecast style */
+  /* map content with 9 cities position style */
+  /* forecast for 3 next days style */
+  /* detail forecast style when we click on double arro or city on the map */
+}
+
+.weather-container .current-temperatures {
+  width: 30%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weather-container .current-temperatures .currDate {
+  text-align: center;
+  color: red;
+}
+
+.weather-container .current-temperatures .curr-city {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2px;
+}
+
+.weather-container .current-temperatures .curr-city .city-name {
+  width: 45%;
+  margin-left: 10px;
+  margin-top: 2px;
+  font-weight: bolder;
+}
+
+.weather-container .current-temperatures .curr-city .city-name .fa {
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.weather-container .current-temperatures .curr-city .city-name .fa.fa:hover {
+  font-size: 120%;
+  font-weight: bolder;
+}
+
+.weather-container .current-temperatures .curr-city #temp-icon {
+  margin: 2px;
+  height: 45px;
+  width: 45px;
+  margin-top: -8px;
+  background: grey;
+}
+
+.weather-container .current-temperatures .curr-city .minTemp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  width: 10%;
+}
+
+.weather-container .current-temperatures .curr-city .minTemp #min {
+  color: green;
+  font-size: 20px;
+  padding-top: 1px;
+  padding-right: 10px;
+}
+
+.weather-container .current-temperatures .curr-city .minTemp #text {
+  font-size: 10px;
+  font-weight: bolder;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+
+.weather-container .current-temperatures .curr-city .maxTemp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  width: 15%;
+}
+
+.weather-container .current-temperatures .curr-city .maxTemp #max {
+  color: red;
+  font-size: 25px;
+  padding-left: 5px;
+}
+
+.weather-container .current-temperatures .curr-city .maxTemp #text {
+  font-size: 10px;
+  font-weight: bolder;
+  padding-left: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .weather-container .current-temperatures .curr-city .maxTemp {
+    width: 20%;
+  }
+  .weather-container .current-temperatures .curr-city .minTemp {
+    width: 15%;
+  }
+}
+
+.weather-container .map-content {
+  display: block;
+  margin-top: 15px;
+  position: relative;
+  width: 40%;
+}
+
+.weather-container .map-content li {
+  list-style-type: none;
+}
+
+.weather-container .map-content .img-pos {
+  background: -webkit-gradient(linear, left top, left bottom, from(#2f96a3), to(#303e8f));
+  background: linear-gradient(#2f96a3, #303e8f);
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.weather-container .map-content #pirot {
+  bottom: 22%;
+  right: 10%;
+}
+
+.weather-container .map-content #nis {
+  bottom: 27%;
+  right: 25%;
+}
+
+.weather-container .map-content #kragujevac {
+  bottom: 40%;
+  right: 37%;
+}
+
+.weather-container .map-content #uzice {
+  bottom: 38%;
+  left: 20%;
+}
+
+.weather-container .map-content #zajecar {
+  bottom: 37%;
+  right: 20%;
+}
+
+.weather-container .map-content #pozarevac {
+  top: 35%;
+  right: 35%;
+}
+
+.weather-container .map-content #beograd {
+  top: 30%;
+  left: 29%;
+}
+
+.weather-container .map-content #novi-sad {
+  top: 20%;
+  left: 25%;
+}
+
+.weather-container .map-content #subotica {
+  top: 5%;
+  left: 20%;
+}
+
+.weather-container .map-content .city-pos {
+  position: absolute;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px whitesmoke;
+  font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weather-container .map-content .city-pos .temperature-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weather-container .map-content .city-pos .temperature-content img {
+  margin: 2px;
+  padding: -5px;
+  height: 30px;
+  width: 30px;
+  background: grey;
+}
+
+.weather-container .map-content .city-pos .temperature-content h2,
+.weather-container .map-content .city-pos .temperature-content span {
+  margin: 2px;
+}
+
+.weather-container .map-content .city-pos:hover {
+  text-shadow: 2px 2px 4px;
+}
+
+.weather-container .long-temperature {
+  display: block;
+  width: 30%;
+  margin-top: 10px;
+}
+
+.weather-container .long-temperature .long-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weather-container .long-temperature .long-temp .dayFirst,
+.weather-container .long-temperature .long-temp .daySecond,
+.weather-container .long-temperature .long-temp .dayThird {
+  width: 30%;
+  text-align: center;
+  color: red;
+}
+
+.weather-container .long-temperature .long-city .city-name {
+  width: 45%;
+  margin-left: 10px;
+  margin-top: 14px;
+  font-weight: bolder;
+}
+
+.weather-container .long-temperature .long-city .longForecast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay,
+.weather-container .long-temperature .long-city .longForecast .secondDay,
+.weather-container .long-temperature .long-city .longForecast .thirdDay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30%;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay #temp-icon,
+.weather-container .long-temperature .long-city .longForecast .secondDay #temp-icon,
+.weather-container .long-temperature .long-city .longForecast .thirdDay #temp-icon {
+  margin: 1px;
+  height: 35px;
+  width: 35px;
+  background: grey;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .minTemp,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .minTemp,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .minTemp,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .minTemp,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .minTemp,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .minTemp,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .minTemp,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .minTemp,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .maxTemp,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .minTemp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .minTemp #max,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .maxTemp #max,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .minTemp #max {
+  color: red;
+  font-size: 15px;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .minTemp #min,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .maxTemp #min,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .minTemp #min {
+  color: green;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .minTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .maxTemp #minText,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .minTemp #minText {
+  margin-left: 4px;
+}
+
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastFirst .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastSecond .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .firstDay .forecastThird .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastFirst .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastSecond .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .secondDay .forecastThird .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastFirst .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastSecond .minTemp #text,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .maxTemp #text,
+.weather-container .long-temperature .long-city .longForecast .thirdDay .forecastThird .minTemp #text {
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .weather-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .weather-container .current-temperatures {
+    width: 42%;
+    margin-right: 2%;
+  }
+  .weather-container .map-content {
+    width: 52%;
+    margin-right: 2%;
+  }
+  .weather-container .long-temperature {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .weather-container .current-temperatures,
+  .weather-container .map-content,
+  .weather-container .long-temperature {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+.weather-container .detail-forecast {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 60px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 100%;
+  overflow: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2f96a3), to(#303e8f));
+  background: linear-gradient(#2f96a3, #303e8f);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 150, 163, 0.4)), to(rgba(48, 62, 143, 0.6)));
+  background: linear-gradient(rgba(47, 150, 163, 0.4), rgba(48, 62, 143, 0.6));
+}
+
+.weather-container .detail-forecast .date-currently {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.weather-container .detail-forecast .daily {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 50px;
+}
+
+.weather-container .detail-forecast .daily .summ {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.weather-container .detail-forecast .daily .summ #summ-text {
+  color: #333;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.weather-container .detail-forecast .daily #iconCurr {
+  margin: 2px;
+  height: 60px;
+  width: 60px;
+}
+
+.weather-container .detail-forecast .daily .currentlyTemp {
+  font-size: 25px;
+  color: #333;
+  margin-left: -30px;
+  margin-top: 15px;
+}
+
+.weather-container .detail-forecast .daily .maxTemp,
+.weather-container .detail-forecast .daily .minTemp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+  text-align: center;
+  width: 25%;
+}
+
+.weather-container .detail-forecast .daily .maxTemp #max,
+.weather-container .detail-forecast .daily .minTemp #max {
+  color: red;
+  font-size: 25px;
+}
+
+.weather-container .detail-forecast .daily .maxTemp #min,
+.weather-container .detail-forecast .daily .minTemp #min {
+  color: green;
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.weather-container .detail-forecast .daily .maxTemp {
+  padding-left: 60px;
+}
+
+.weather-container .detail-forecast .daily .minTemp {
+  padding-right: 60px;
+}
+
+.weather-container .detail-forecast .hourly-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.weather-container .detail-forecast .hourly-temp #hourly-icon {
+  margin: 2px;
+  height: 60px;
+  width: 60px;
+  background: lightgrey;
+}
+
+.weather-container .detail-forecast .detail-long-term {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.weather-container .detail-forecast .detail-long-term .day-temp {
+  width: 20%;
+}
+
+.weather-container .detail-forecast .detail-long-term .day-temp h5 {
+  color: red;
+}
+
+.weather-container .detail-forecast .detail-long-term .day-temp .long-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.weather-container .detail-forecast .detail-long-term .day-temp .long-temp #long-icon {
+  margin: 2px;
+  height: 50px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background: lightgrey;
+}
+
+.weather-container .detail-forecast .btn-back {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
+.weather-container .detail-forecast .btn-back:hover {
+  border: 3px solid whitesmoke;
+  background-color: rgba(48, 62, 143, 0.8);
+  color: whitesmoke;
+}
+
+@media screen and (min-width: 768px) {
+  .weather-container .detail-forecast {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .weather-container .detail-forecast .maxTemp,
+  .weather-container .detail-forecast .minTemp {
+    width: 10%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .weather-container .detail-forecast .maxTemp {
+    padding-left: 100px;
+  }
+  .weather-container .detail-forecast .minTemp {
+    padding-right: 100px;
+  }
+}
+/*# sourceMappingURL=forecast.css.map */
